@@ -1,0 +1,30 @@
+version: "3.7"
+services:
+  db:
+    image: mysql:8
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: 1234
+      MYSQL_DATABASE: healtho
+      MYSQL_USER: rumba7788
+      MYSQL_PASSWORD: 1389nm2389
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - ./docker/db/conf.d/server.cnf:/etc/mysql/conf.d/server.cnf:ro
+      - ./docker/db/initdb.d:/docker-entrypoint-initdb.d:ro
+      - ./docker/db/data:/var/lib/mysql
+    ports:
+      - 3306:3306
+  php:
+    depends_on:
+      - db
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: always
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+    ports:
+      - 8000:8000
+    tty: true
+    stdin_open: true
