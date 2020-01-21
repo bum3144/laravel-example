@@ -11,4 +11,9 @@ class Blog extends Model
     // ];
 
     protected $guarded = [];
+
+    public function comments()
+    {
+        return $this->hasMany('App\Comment');
+    }
 }

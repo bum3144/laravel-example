@@ -7,6 +7,15 @@ use App\Blog;
 
 class BlogController extends Controller
 {
+
+    public function show($id)
+    {
+        $blog = Blog::with(['comments'])->where('id', $id)->firstOrFail();
+        // dd($blog);
+
+        return view('blogs.show', compact('blog'));
+    }
+
     public function create()
     {
         return view('blogs.create');
