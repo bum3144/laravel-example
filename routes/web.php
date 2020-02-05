@@ -27,7 +27,7 @@ Route::get('/hello', function() {
 });
 
 Route::get('/test', function(){
-    return view('test');
+    return view('welcome2');
 });
 
 Auth::routes();
