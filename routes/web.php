@@ -27,7 +27,23 @@ Route::get('/hello', function() {
 });
 
 Route::get('/test', function(){
-    return view('welcome2');
+    $links = [
+        'link01',
+        'link02',
+        'link03',
+        'link04',
+        'link05'
+    ];
+
+    // return view('welcome2', [
+    //     'links' => $links
+    // ]);
+
+    // return view('welcome2')->withLinks($links);
+
+    return view('welcome2')->with([
+        'links' => $links
+    ]);
 });
 
 Auth::routes();
