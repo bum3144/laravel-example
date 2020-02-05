@@ -24,8 +24,8 @@
     "php.validate.executablePath": "php",
     "artisan.docker.enabled": false,
     "artisan.php.location": "php",
-    "artisan.serve.defaultHost": "0.0.0.0'",
-    "artisan.serve.defaultPort": "8000'"
+    "artisan.serve.defaultHost": "0.0.0.0",
+    "artisan.serve.defaultPort": "8000"
   },
 
   // Uncomment the next line if you want start specific services in your Docker Compose config.
