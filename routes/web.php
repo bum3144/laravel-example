@@ -26,25 +26,7 @@ Route::get('/hello', function() {
     return view('hello');
 });
 
-Route::get('/test', function(){
-    $links = [
-        'link01',
-        'link02',
-        'link03',
-        'link04',
-        'link05'
-    ];
-
-    // return view('welcome2', [
-    //     'links' => $links
-    // ]);
-
-    // return view('welcome2')->withLinks($links);
-
-    return view('welcome2')->with([
-        'links' => $links
-    ]);
-});
+Route::get('/test', 'Home2Controller@index2');
 
 Auth::routes();
 

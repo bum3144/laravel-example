@@ -14,7 +14,7 @@ services:
       - ./docker/db/initdb.d:/docker-entrypoint-initdb.d:ro
       - ./docker/db/data:/var/lib/mysql
     ports:
-      - 3306:3306
+      - 3307:3306
   php:
     depends_on:
       - db
